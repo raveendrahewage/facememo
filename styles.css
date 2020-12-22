@@ -106,7 +106,7 @@ body {
 }
 
 .margin-top {
-    margin-top: 50px;
+    margin-top: 80px;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -136,4 +136,8 @@ body {
 
 .btn-margin {
     margin: 5px;
+}
+
+.table-add {
+    margin-left: 0;
 }

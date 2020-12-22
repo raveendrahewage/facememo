@@ -6,6 +6,8 @@ const model = document.getElementById("model");
 const resetBtn = document.getElementById("resetBtn");
 const easyBtn = document.getElementById("easyBtn");
 const hardBtn = document.getElementById("hardBtn");
+const tabBody = document.getElementById("tabBody");
+var finishedTimes = [];
 
 var isFlipped = false;
 var flipedCount = 0;
@@ -16,14 +18,14 @@ var timerStarted = false;
 var minutes = 0;
 var seconds = 0;
 var miliseconds = 0;
-var gameType = "easy";
+var gameType = "Easy";
 
 hardBtn.addEventListener("click", hardChanges);
 easyBtn.addEventListener("click", easyChanges);
 
 function hardChanges() {
     gameReset();
-    gameType = "hard";
+    gameType = "Hard";
     hardBtn.classList.remove("btn-light");
     hardBtn.classList.add("btn-success");
     easyBtn.classList.remove("btn-success");
@@ -40,7 +42,7 @@ function hardChanges() {
 
 function easyChanges() {
     gameReset();
-    gameType = "easy";
+    gameType = "Easy";
     hardBtn.classList.add("btn-light");
     hardBtn.classList.remove("btn-success");
     easyBtn.classList.remove("btn-light");
@@ -86,26 +88,39 @@ function success() {
     firstCard.removeEventListener("click", flip);
     secondCard.removeEventListener("click", flip);
     successCount++;
-    if (successCount === 8 && gameType === "easy") {
-        timerStarted = false;
-        successCount = 0;
-        minutes < 10 ? dispMinutes = "0" + minutes : dispMinutes = minutes;
-        seconds < 10 ? dispSeconds = "0" + seconds : dispSeconds = seconds;
-        miliseconds < 10 ? dispMiliseconds = "0" + miliseconds : dispMiliseconds = miliseconds;
-
-        finishTime.innerText = "Time:" + dispMinutes + ":" + dispSeconds + ":" + dispMiliseconds;
-        model.classList.remove("hide");
-    } else if (successCount === 15 && gameType === "hard") {
-        timerStarted = false;
-        successCount = 0;
-        minutes < 10 ? dispMinutes = "0" + minutes : dispMinutes = minutes;
-        seconds < 10 ? dispSeconds = "0" + seconds : dispSeconds = seconds;
-        miliseconds < 10 ? dispMiliseconds = "0" + miliseconds : dispMiliseconds = miliseconds;
-
-        finishTime.innerText = "Time:" + dispMinutes + ":" + dispSeconds + ":" + dispMiliseconds;
-        model.classList.remove("hide");
+    if (successCount === 8 && gameType === "Easy") {
+        finishTimeDisplay();
+    } else if (successCount === 15 && gameType === "Hard") {
+        finishTimeDisplay();
     }
     reset();
+}
+
+function finishTimeDisplay() {
+    timerStarted = false;
+    successCount = 0;
+    minutes < 10 ? dispMinutes = "0" + minutes : dispMinutes = minutes;
+    seconds < 10 ? dispSeconds = "0" + seconds : dispSeconds = seconds;
+    miliseconds < 10 ? dispMiliseconds = "0" + miliseconds : dispMiliseconds = miliseconds;
+    finishedTimes.push(gameType + " - " + dispMinutes + ":" + dispSeconds + ":" + dispMiliseconds);
+
+    finishTime.innerText = "Time:" + dispMinutes + ":" + dispSeconds + ":" + dispMiliseconds;
+    model.classList.remove("hide");
+
+    tabBody.innerHTML = "";
+
+    for (let i = 0; i < finishedTimes.length; i++) {
+        const tr = document.createElement("tr");
+        const th = document.createElement("th");
+        const td = document.createElement("td");
+        const time = document.createTextNode(finishedTimes[i]);
+        td.appendChild(time);
+        const attempt = document.createTextNode(i + 1);
+        th.appendChild(attempt);
+        tr.appendChild(th);
+        tr.appendChild(td);
+        tabBody.appendChild(tr);
+    }
 }
 
 function failed() {
@@ -126,10 +141,10 @@ function reset() {
 function shuffle() {
     cards.forEach((card) => {
         if (!card.classList.contains("hide")) {
-            if (gameType === "easy") {
+            if (gameType === "Easy") {
                 var index = Math.floor(Math.random() * 16);
                 card.style.order = index;
-            } else if (gameType === "hard") {
+            } else if (gameType === "Hard") {
                 var index = Math.floor(Math.random() * 30);
                 card.style.order = index;
             }
