@@ -126,6 +126,7 @@ body {
     margin: 20px;
     margin-bottom: 30px;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.26);
     border: 5px solid rgb(156, 156, 156);
 }
 
@@ -140,4 +141,10 @@ body {
 
 .table-add {
     margin-left: 0;
+}
+
+.margins {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
