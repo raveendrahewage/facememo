@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Check Your Memory</title>
+    <link rel="icon" href="img/lco.png" sizes="16x16" type="image/png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="title">
+        <h1 class="text-center text-white display-4 font-weight-bold">FaceMemo</h1>
+    </div>
+    <div class="gameContainer d-flex justify-content-center">
+        <div class="d-flex justify-content-between timer">
+            <button class="btn btn-warning btn-lg float-left" id="timerBtn">Start Timer</button>
+            <h1 class="text-white float-left margin-left timer-box" id="timerDisplay">00:00:00</h1>
+            <button class="btn btn-danger btn-lg float-right" id="resetBtn">Reset Game</button>
+        </div>
+        <div class="d-flex justify-content-center type">
+            <button class="btn btn-success btn-lg btn-margin" id="easyBtn">Easy</button>
+            <button class="btn btn-light btn-lg btn-margin" id="hardBtn">Hard</button>
+        </div>
+        <div class="card" data-image="evilface">
+            <img src="img/evilface.png" class="front flip" alt="evilface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="evilface">
+            <img src="img/evilface.png" class="front" alt="evilface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="angryface">
+            <img src="img/angryface.png" class="front" alt="angryface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="angryface">
+            <img src="img/angryface.png" class="front" alt="angryface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="coolface">
+            <img src="img/coolface.png" class="front" alt="coolface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="coolface">
+            <img src="img/coolface.png" class="front" alt="coolface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="feverface">
+            <img src="img/feverface.png" class="front" alt="feverface" />
+            <img src="img/lco.png" class="back" alt="feverface" />
+        </div>
+        <div class="card" data-image="feverface">
+            <img src="img/feverface.png" class="front" alt="feverface" />
+            <img src="img/lco.png" class="back" alt="feverface" />
+        </div>
+        <div class="card" data-image="vomitface">
+            <img src="img/vomitface.png" class="front" alt="vomitface" />
+            <img src="img/lco.png" class="back" alt="vomitface" />
+        </div>
+        <div class="card" data-image="vomitface">
+            <img src="img/vomitface.png" class="front" alt="vomitface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="sneezeface">
+            <img src="img/sneezeface.png" class="front" alt="sneezeface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="sneezeface">
+            <img src="img/sneezeface.png" class="front" alt="sneezeface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="mindblownface">
+            <img src="img/mindblownface.png" class="front" alt="mindblownface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="mindblownface">
+            <img src="img/mindblownface.png" class="front" alt="mindblownface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="thinkingface">
+            <img src="img/thinkingface.png" class="front" alt="thinkingface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card" data-image="thinkingface">
+            <img src="img/thinkingface.png" class="front" alt="thinkingface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="evilface">
+            <img src="img/freezeface.png" class="front flip" alt="evilface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="evilface">
+            <img src="img/freezeface.png" class="front" alt="evilface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="angryface">
+            <img src="img/angryface.png" class="front" alt="angryface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="angryface">
+            <img src="img/angryface.png" class="front" alt="angryface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="coolface">
+            <img src="img/coolface.png" class="front" alt="coolface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="coolface">
+            <img src="img/coolface.png" class="front" alt="coolface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="feverface">
+            <img src="img/feverface.png" class="front" alt="feverface" />
+            <img src="img/lco.png" class="back" alt="feverface" />
+        </div>
+        <div class="card hide" data-image="feverface">
+            <img src="img/feverface.png" class="front" alt="feverface" />
+            <img src="img/lco.png" class="back" alt="feverface" />
+        </div>
+        <div class="card hide" data-image="vomitface">
+            <img src="img/vomitface.png" class="front" alt="vomitface" />
+            <img src="img/lco.png" class="back" alt="vomitface" />
+        </div>
+        <div class="card hide" data-image="vomitface">
+            <img src="img/vomitface.png" class="front" alt="vomitface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="sneezeface">
+            <img src="img/sneezeface.png" class="front" alt="sneezeface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="sneezeface">
+            <img src="img/sneezeface.png" class="front" alt="sneezeface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="mindblownface">
+            <img src="img/mindblownface.png" class="front" alt="mindblownface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+        <div class="card hide" data-image="mindblownface">
+            <img src="img/mindblownface.png" class="front" alt="mindblownface" />
+            <img src="img/lco.png" class="back" alt="lco" />
+        </div>
+    </div>
+    <div class="margin-top">
+        <h1 class="text-center text-white display-4">Instructions</h1>
+        <div class="instructions">
+            <ul>
+                <li>Once you click on the "Start Timer" button or any of these squre, the game will start.</li>
+                <li>When you click on a squre, it will rotate and reveal the hidden face.</li>
+                <li>After revealing one face, you can click on another squre and reveal it too. But, if it doesn't match to the previous one, both will rotate and hide the face.</li>
+                <li>Whenever time you get two mathcing faces, they will remain revealed.</li>
+                <li>When you got revealed all 8 faces from 16 squres, the timer will be stopped.</li>
+                <li>Play this small game and check how your memory is.</li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="text-center p-3 text-light" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2020 Copyright:
+            <a class="text-dark">Raveendra Hewage</a>
+        </div>
+    </footer>
+    <div class="model hide" id="model">
+        <div class="finish-time scaleLow" id="finishTime">
+            <p class="text-center" id="finishTime">00:00:00</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
