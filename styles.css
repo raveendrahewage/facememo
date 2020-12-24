@@ -70,7 +70,7 @@ body {
 }
 
 .footer {
-    /* position: fixed; */
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -153,21 +153,5 @@ body {
 }
 
 .margin-bottom {
-    /* margin-bottom: 80px; */
+    margin-bottom: 80px;
 }
-
-
-/* @media screen and (max-width: 600px) {
-    .gameContainer {
-        width: 100%;
-        height: 600px;
-        perspective: 2000px;
-    }
-    .card {
-        width: 20%;
-        height: 20%;
-    }
-    .type {
-        width: 100%;
-    }
-} */
