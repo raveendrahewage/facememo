@@ -24,7 +24,6 @@ hardBtn.addEventListener("click", hardChanges);
 easyBtn.addEventListener("click", easyChanges);
 
 function hardChanges() {
-    gameReset();
     gameType = "Hard";
     hardBtn.classList.remove("btn-light");
     hardBtn.classList.add("btn-success");
@@ -38,10 +37,10 @@ function hardChanges() {
     for (let i = 16; i < 30; i++) {
         cards[i].classList.remove("hide");
     }
+    gameReset();
 }
 
 function easyChanges() {
-    gameReset();
     gameType = "Easy";
     hardBtn.classList.add("btn-light");
     hardBtn.classList.remove("btn-success");
@@ -55,6 +54,7 @@ function easyChanges() {
     for (let i = 16; i < 30; i++) {
         cards[i].classList.add("hide");
     }
+    gameReset();
 }
 
 cards.forEach((card) => card.addEventListener("click", flip));
